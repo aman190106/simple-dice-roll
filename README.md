@@ -1,1 +1,2 @@
-# simple-dice-roll
+heyyy everyone my self AMAN...
+this is a simple website which rolls a dice everytime you click on the dice.
