@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dice Roller</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        .container {
+            margin-top: 100px;
+        }
+        .dice {
+            width: 100px;  
+            height: 100px; 
+            cursor: pointer;
+            display: inline-block;
+            padding: 20px;
+            border: 2px solid #333;
+            border-radius: 10px;
+            background-color: #fff;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            user-select: none;
+        }
+        .dice img {
+            width: 100px;
+            height: 100px;
+        }
+        .dice:hover {
+            background-color: #f0f0f0;
+        }
+        .message {
+            margin-top: 20px;
+            font-size: 20px;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="dice" id="dice">
+            <img src="1.png" alt="Dice">
+        </div>
+        <div class="message" id="message">Click the dice to roll!</div>
+    </div>
+
+    <script>
+        const dice = document.getElementById('dice');
+        const message = document.getElementById('message');
+
+        const diceFaces = ["1.png", "2.png", "3.png", "4.png", "5.png", "6.png"];
+
+        dice.addEventListener('click', () => {
+            const randomIndex = Math.floor(Math.random() * 6); 
+            dice.innerHTML = `<img src="${diceFaces[randomIndex]}" alt="Dice">`;
+            message.textContent = `You rolled a ${randomIndex + 1}!`;
+        });
+    </script>
+</body>
+</html>
